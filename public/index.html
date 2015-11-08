@@ -26,7 +26,7 @@
       <p>This is the left-div</p>
       Search: <input ng-model="query"></input>
       <div ng-repeat="contact in contacts | filter:query">
-        <span>{{contact.last_name}}</span>, <span>{{contact.first_name}}</span>
+        <span>{{contact.lastname}}</span>, <span>{{contact.firstname}}</span>
       </div>
     </div>
     <div id="right-div">
