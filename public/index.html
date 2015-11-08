@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html>
+<html ng-app="changeHeroesApp">
 <head>
 	<!-- META -->
 	<meta charset="utf-8">
@@ -9,13 +9,13 @@
 	<title></title>
 
 	<!-- CSS -->
-
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="assets/css/app.css">
 	<!-- SCRIPTS -->
-
+  <script src="assets/js/angular.min.js"></script>
+  <script src="assets/js/controllers.js"></script>
 </head>
 
-<body>
+<body ng-controller="ChangeHeroesCtrl">
 <!-- CONTENT -->
   <div id="wrapper-div">
     <div id="header-div">
@@ -25,10 +25,9 @@
       <h2>All Contacts</h2>
       <p>This is the left-div</p>
       Search: <input></input>
-      <div><span>a</span>, <span>a</span></div>
-      <div><span>b</span>, <span>b</span></div>
-      <div><span>c</span>, <span>c</span></div>
-      <div><span>d</span>, <span>d</span></div>
+      <div ng-repeat="contact in contacts">
+        <span>{{contact.last_name}}</span>, <span>{{contact.first_name}}</span>
+      </div>
     </div>
     <div id="right-div">
       <p>This is the right-div</p>
