@@ -24,8 +24,8 @@
     <div id="left-div">
       <h2>All Contacts</h2>
       <p>This is the left-div</p>
-      Search: <input></input>
-      <div ng-repeat="contact in contacts">
+      Search: <input ng-model="query"></input>
+      <div ng-repeat="contact in contacts | filter:query">
         <span>{{contact.last_name}}</span>, <span>{{contact.first_name}}</span>
       </div>
     </div>
