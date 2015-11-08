@@ -1,0 +1,21 @@
+
+#wrapper-div {
+  position: relative;
+}
+#header-div {
+  width: 100%;
+  height: 75px;
+  background: #eeeeee;
+}
+#left-div {
+  float: left;
+  width: 25%;
+  height: 500px;
+  background: #444444;
+}
+#right-div {
+  float: left;
+  width: 75%;
+  height: 500px;
+  background: #888888;
+}
