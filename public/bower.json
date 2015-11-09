@@ -1,0 +1,21 @@
+{
+  "name": "public",
+  "homepage": "n/a",
+  "authors": [
+    "Jeff H <jahuangi@yahoo.ca>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.7"
+  }
+}
