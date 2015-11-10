@@ -16,19 +16,35 @@
 
     <p ng-bind-html="message">{{message}}</p>
     <h2>{{selectedContact.firstname}} {{selectedContact.lastname}}</h2>
+    <div ng-if="pageMode === 'display'">
+      <button type="button" ng-click="edit(selectedContact.id)">Edit</button>
+    </div>
+    <div ng-if="pageMode === 'edit'">
+      <button type="button" ng-click="save(selectedContact.id)">Save</button>
+    </div>
+
     <table>
       <tbody>
         <tr>
           <td>Phone</td>
-          <td>{{selectedContact.phone}}</td>
+          <td ng-if="pageMode === 'display'">{{selectedContact.phone}}</td>
+          <td ng-if="pageMode === 'edit'">
+            <input type="text" ng-model="contactForm.phone" name="contactForm.phone">
+          </td>
         </tr>
         <tr>
           <td>Email</td>
-          <td>{{selectedContact.email}}</td>
+          <td ng-if="pageMode === 'display'">{{selectedContact.email}}</td>
+          <td ng-if="pageMode === 'edit'">
+            <input type="text" ng-model="contactForm.email" name="email_field"">
+          </td>
         </tr>
         <tr>
           <td>Address</td>
-          <td>{{selectedContact.address}}</td>
+          <td ng-if="pageMode === 'display'">{{selectedContact.address}}</td>
+          <td ng-if="pageMode === 'edit'">
+            <input type="text" ng-model="contactForm.address" name="address_field">
+          </td>
         </tr>
       </tbody>
     </table>
