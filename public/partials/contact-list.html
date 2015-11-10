@@ -8,29 +8,36 @@
     <p>This is the left-div</p>
     Search: <input ng-model="query"></input>
     <div ng-repeat="contact in contacts | filter:query">
-      <span>{{contact.lastname}}</span>, <span>{{contact.firstname}}</span>
+      <a href="javascript:void(0);" ng-click="printSomething(contact.id)"><div>{{contact.lastname}}, {{contact.firstname}}</div></a>
     </div>
   </div>
   <div id="right-div">
     <p>This is the right-div</p>
-    <h2>
-      <span id="main-last-name">H</span>,<span id="main-first-name">Jeff</span>
-    </h2>
+
+    <p ng-bind-html="message">{{message}}</p>
+    <h2>{{selectedContact.firstname}} {{selectedContact.lastname}}</h2>
     <table>
       <tbody>
         <tr>
           <td>Phone</td>
-          <td>604-123-4567</td>
+          <td>{{selectedContact.phone}}</td>
         </tr>
         <tr>
           <td>Email</td>
-          <td>jeff@edvisor.io</td>
+          <td>{{selectedContact.email}}</td>
         </tr>
         <tr>
           <td>Address</td>
-          <td>1234 Edvisor Road</td>
+          <td>{{selectedContact.address}}</td>
         </tr>
       </tbody>
     </table>
+    <hr>
+    <select ng-model="some_value" ng-options="number for number in numbers">
+    </select>
+    <span>some_value is {{some_value}}</span>
+    <div ng-if="some_value">
+      <p>This is the number 1 div!</p>
+    </div>
   </div>
 </div>

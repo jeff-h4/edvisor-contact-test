@@ -1,5 +1,5 @@
 var contactApp = angular.module("contactApp",
-                        ['ngRoute','contactControllers']);
+                        ['ngRoute','ngSanitize','contactControllers']);
 
 contactApp.config(['$routeProvider',
   function($routeProvider) {
