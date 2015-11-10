@@ -5,16 +5,12 @@
   </div>
   <div id="left-div">
     <h2>All Contacts</h2>
-    <p>This is the left-div</p>
     Search: <input ng-model="query"></input>
     <div ng-repeat="contact in contacts | filter:query">
-      <a href="javascript:void(0);" ng-click="printSomething(contact.id)"><div>{{contact.lastname}}, {{contact.firstname}}</div></a>
+      <a href="javascript:void(0);" ng-click="displayContact(contact.id)"><div>{{contact.lastname}}, {{contact.firstname}}</div></a>
     </div>
   </div>
   <div id="right-div">
-    <p>This is the right-div</p>
-
-    <p ng-bind-html="message">{{message}}</p>
     <h2>{{selectedContact.firstname}} {{selectedContact.lastname}}</h2>
     <div ng-if="pageMode === 'display'">
       <button type="button" ng-click="edit(selectedContact.id)">Edit</button>
@@ -48,12 +44,5 @@
         </tr>
       </tbody>
     </table>
-    <hr>
-    <select ng-model="some_value" ng-options="number for number in numbers">
-    </select>
-    <span>some_value is {{some_value}}</span>
-    <div ng-if="some_value">
-      <p>This is the number 1 div!</p>
-    </div>
   </div>
 </div>

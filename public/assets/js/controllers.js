@@ -15,7 +15,7 @@ contactControllers.controller('ContactListCtrl', ['$scope','$http',
         $scope.contactForm.phone = $scope.contacts[0].phone; 
         $scope.contactForm.email = $scope.contacts[0].email; 
         $scope.contactForm.address = $scope.contacts[0].address; 
-        $scope.printSomething = function(id) {
+        $scope.displayContact = function(id) {
           console.log("A contact with ID " + id + " was clicked");
           $scope.selectedContact = $scope.contacts[id];
           $scope.phone_input = $scope.contacts[id].phone; 
@@ -28,24 +28,12 @@ contactControllers.controller('ContactListCtrl', ['$scope','$http',
         };
         $scope.save = function(id) {
           console.log("This is DISPLAY mode.");
-          console.log($scope.selectedContact);
-          console.log($scope.contacts[id]);
-          console.log($scope.contactForm.phone);
-          console.log($scope.contactForm.email);
-          console.log($scope.contactForm.address);
           $scope.pageMode = "display";
           $scope.contacts[id].phone   = $scope.contactForm.phone;
           $scope.contacts[id].email   = $scope.contactForm.email;
           $scope.contacts[id].address = $scope.contactForm.address;
           $scope.selectedContact = $scope.contacts[id];
-          //console.log($scope.contacts[id]);
         };
-
-        $scope.message = "<strong>Jeff, we want to hire you.</strong>";
-        $scope.items = ["number_one","number_two","number_three"];
-        $scope.some_value = $scope.items[0];
-        console.log("Inside ContactListCtrl");
-        console.log(data);
       });
     },
 
