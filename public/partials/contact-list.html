@@ -14,39 +14,46 @@
       </div>
     </div>
     <div id="right-div">
-      <h2>{{selectedContact.firstname}} {{selectedContact.lastname}}</h2>
-      <div ng-if="pageMode === 'display'">
-        <button type="button" class="btn btn-primary" ng-click="edit(selectedContact.id)">Edit</button>
+      <div class="row">
+        <div class="col-xs-offset-2 col-xs-6">
+          <h2>{{selectedContact.firstname}} {{selectedContact.lastname}}</h2>
+        </div>
+        <div class="col-xs-4" ng-if="pageMode === 'display'">
+          <button type="button" class="btn btn-primary" ng-click="edit(selectedContact.id)">Edit</button>
+        </div>
+        <div class="col-xs-4" ng-if="pageMode === 'edit'">
+          <button type="button" class="btn btn-success" ng-click="save(selectedContact.id)">Save</button>
+        </div>
       </div>
-      <div ng-if="pageMode === 'edit'">
-        <button type="button" class="btn btn-success" ng-click="save(selectedContact.id)">Save</button>
+      <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Phone</td>
+                <td ng-if="pageMode === 'display'">{{selectedContact.phone}}</td>
+                <td ng-if="pageMode === 'edit'">
+                  <input class="contact-field" type="text" ng-model="contactForm.phone" name="contactForm.phone">
+                </td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td ng-if="pageMode === 'display'">{{selectedContact.email}}</td>
+                <td ng-if="pageMode === 'edit'">
+                  <input class="contact-field" type="text" ng-model="contactForm.email" name="email_field"">
+                </td>
+              </tr>
+              <tr>
+                <td>Address</td>
+                <td ng-if="pageMode === 'display'">{{selectedContact.address}}</td>
+                <td ng-if="pageMode === 'edit'">
+                  <input class="contact-field" type="text" ng-model="contactForm.address" name="address_field">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-
-      <table class="table">
-        <tbody>
-          <tr>
-            <td>Phone</td>
-            <td ng-if="pageMode === 'display'">{{selectedContact.phone}}</td>
-            <td ng-if="pageMode === 'edit'">
-              <input class="contact-field" type="text" ng-model="contactForm.phone" name="contactForm.phone">
-            </td>
-          </tr>
-          <tr>
-            <td>Email</td>
-            <td ng-if="pageMode === 'display'">{{selectedContact.email}}</td>
-            <td ng-if="pageMode === 'edit'">
-              <input class="contact-field" type="text" ng-model="contactForm.email" name="email_field"">
-            </td>
-          </tr>
-          <tr>
-            <td>Address</td>
-            <td ng-if="pageMode === 'display'">{{selectedContact.address}}</td>
-            <td ng-if="pageMode === 'edit'">
-              <input class="contact-field" type="text" ng-model="contactForm.address" name="address_field">
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>
 </div>
