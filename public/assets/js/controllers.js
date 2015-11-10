@@ -15,12 +15,13 @@ contactControllers.controller('ContactListCtrl', ['$scope','$http',
         $scope.contactForm.phone = $scope.contacts[0].phone; 
         $scope.contactForm.email = $scope.contacts[0].email; 
         $scope.contactForm.address = $scope.contacts[0].address; 
+
         $scope.displayContact = function(id) {
           console.log("A contact with ID " + id + " was clicked");
-          $scope.selectedContact = $scope.contacts[id];
-          $scope.phone_input = $scope.contacts[id].phone; 
-          $scope.email_input = $scope.contacts[id].email; 
-          $scope.address_input = $scope.contacts[id].address; 
+          $scope.selectedContact     = $scope.contacts[id];
+          $scope.contactForm.phone   = $scope.contacts[id].phone; 
+          $scope.contactForm.email   = $scope.contacts[id].email; 
+          $scope.contactForm.address = $scope.contacts[id].address; 
         };
         $scope.edit = function(id) {
           console.log("This is EDIT mode.");
